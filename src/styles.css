@@ -264,7 +264,7 @@ button {
     8px 64px 0 -4px #0f172a;
 }
 
-.bat {
+/* .bat {
   position: absolute;
   width: 75px;
   height: auto;
@@ -272,7 +272,7 @@ button {
   top: 60px;
   transform: rotate(-30deg);
   size: 40px 100px;
-}
+} */
 
 .swing .bat {
   animation: bat-swing 0.48s ease forwards;
