@@ -4,7 +4,9 @@ import stumps from './assets/stumps.png';
 
 const MAX_BALLS = 12;
 const MAX_WICKETS = 2;
-const SLIDER_SPEED_MS = 1600;
+const getSliderSpeed = (style) => {
+  return style === 'aggressive' ? 1000 : 1800;
+};
 const COMMENTARY = {
   wicket: [
     'Cleaned up. The batter missed it completely.',
@@ -136,8 +138,9 @@ export default function App() {
         sliderStartRef.current = timestamp;
       }
       const elapsed = timestamp - sliderStartRef.current;
-      const cycle = elapsed % SLIDER_SPEED_MS;
-      const normalized = cycle / SLIDER_SPEED_MS;
+      const speed = getSliderSpeed(selectedStyle);
+      const cycle = elapsed % speed;
+      const normalized = cycle / speed;
       const pingPong = normalized < 0.5 ? normalized * 2 : (1 - normalized) * 2;
       setSliderProgress(pingPong);
       animationFrameRef.current = requestAnimationFrame(tick);
