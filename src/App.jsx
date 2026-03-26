@@ -144,7 +144,6 @@ export default function App() {
       const speed = getSliderSpeed(selectedStyle);
       const cycle = elapsed % speed;
       const normalized = cycle / speed;
-      const pingPong = normalized < 0.5 ? normalized * 2 : (1 - normalized) * 2;
       setSliderProgress(pingPong);
       animationFrameRef.current = requestAnimationFrame(tick);
     };
