@@ -1,0 +1,449 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #eef4f8;
+  background: #0d1b2a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(66, 135, 245, 0.18), transparent 35%),
+    linear-gradient(180deg, #09111b 0%, #102033 100%);
+}
+
+button {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.hero-panel,
+.card {
+  background: rgba(9, 18, 30, 0.85);
+  border: 1px solid rgba(159, 188, 208, 0.18);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(12px);
+}
+
+.hero-panel {
+  padding: 24px 28px;
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #93c5fd;
+}
+
+.hero-panel h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.subcopy {
+  margin: 10px 0 0;
+  max-width: 760px;
+  color: #c6d8e5;
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 20px;
+}
+
+.left-column,
+.right-column {
+  display: grid;
+  gap: 18px;
+}
+
+.card {
+  border-radius: 24px;
+  padding: 20px;
+}
+
+.card h2 {
+  margin: 0 0 16px;
+  font-size: 1.2rem;
+}
+
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.score-grid div {
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(142, 197, 252, 0.08);
+  border: 1px solid rgba(142, 197, 252, 0.14);
+}
+
+.score-grid span {
+  display: block;
+  color: #9fb4c8;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.score-grid strong {
+  font-size: 1.5rem;
+}
+
+.style-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.style-btn,
+.action-btn,
+.restart-btn {
+  border: 0;
+  border-radius: 16px;
+  padding: 14px 18px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.18s ease, opacity 0.18s ease, box-shadow 0.18s ease;
+}
+
+.style-btn:hover,
+.action-btn:hover,
+.restart-btn:hover {
+  transform: translateY(-1px);
+}
+
+.style-btn:disabled,
+.action-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+.style-btn.aggressive,
+.action-btn {
+  background: linear-gradient(135deg, #fb7185, #ef4444);
+}
+
+.style-btn.defensive,
+.restart-btn {
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+}
+
+.style-btn.active {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.18);
+}
+
+.style-description,
+.commentary p {
+  color: #cad6e2;
+  line-height: 1.6;
+}
+
+.action-btn {
+  width: 100%;
+  margin-top: 14px;
+  font-weight: 700;
+}
+
+.restart-btn {
+  min-width: 160px;
+}
+
+.status-line {
+  font-weight: 700;
+  color: #fff;
+}
+
+.field {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+}
+
+.stadium-sky {
+  position: absolute;
+  inset: 0 0 52% 0;
+  background: linear-gradient(180deg, #60a5fa, #bae6fd);
+}
+
+.crowd-strip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 34%;
+  height: 42px;
+  background:
+    radial-gradient(circle at 6px 18px, #27384d 0 3px, transparent 4px),
+    radial-gradient(circle at 22px 14px, #1d2938 0 3px, transparent 4px),
+    radial-gradient(circle at 40px 22px, #324760 0 3px, transparent 4px),
+    linear-gradient(180deg, #6b7280, #475569);
+  background-size: 46px 42px, 46px 42px, 46px 42px, auto;
+  border-top: 3px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.25);
+}
+
+.field-oval {
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: min(100%, 860px);
+  height: 72%;
+  border-radius: 50% 50% 0 0;
+  background: radial-gradient(circle at 50% 50%, #65a30d 0%, #4d7c0f 42%, #3f6212 75%, #365314 100%);
+  border: 10px solid #7c9a1d;
+  box-shadow: inset 0 -30px 40px rgba(0, 0, 0, 0.18);
+}
+
+.pitch {
+  width: 400px; 
+  height: 100px; 
+  background: linear-gradient(to right, #e8cfa5, #d4b483);
+  border-radius: 20px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+.batsman {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.player-head {
+  position: absolute;
+  left: 26px;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  background: #f4c78f;
+  border-radius: 50%;
+}
+
+.player-body {
+  position: absolute;
+  left: 28px;
+  top: 20px;
+  width: 18px;
+  height: 62px;
+  background: #0f172a;
+  border-radius: 9px;
+  box-shadow:
+    -18px 8px 0 -5px #0f172a,
+    18px 8px 0 -5px #0f172a,
+    -8px 64px 0 -4px #0f172a,
+    8px 64px 0 -4px #0f172a;
+}
+
+.bat {
+  position: absolute;
+  left: 44px;
+  top: 30px;
+  width: 12px;
+  height: 82px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #f5deb3, #d2a679);
+  transform-origin: bottom center;
+  box-shadow: 0 0 0 2px rgba(113, 76, 38, 0.22);
+}
+
+.swing .bat {
+  animation: bat-swing 0.48s ease forwards;
+}
+
+@keyframes bat-swing {
+  0% { transform: rotate(12deg); }
+  40% { transform: rotate(-48deg); }
+  100% { transform: rotate(-12deg); }
+}
+
+.ball {
+  position: absolute;
+  right: 22%;
+  top: 14%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff 0 8%, #ef4444 9% 100%);
+  box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.ball.bowling {
+  animation: bowl-in 0.9s linear forwards;
+}
+
+@keyframes bowl-in {
+  0% {
+    right: 18%;
+    top: 12%;
+    transform: scale(0.8);
+  }
+  100% {
+    right: calc(50% - 8px);
+    top: 57%;
+    transform: scale(1.15);
+  }
+}
+
+.powerbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.powerbar-header span {
+  color: #a5c7dc;
+}
+
+.bar-wrapper {
+  margin-top: 12px;
+}
+
+.segments-row {
+  display: flex;
+  height: 58px;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.segment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.seg-wicket { background: linear-gradient(180deg, #991b1b, #b91c1c); }
+.seg-dot { background: linear-gradient(180deg, #334155, #1e293b); }
+.seg-one { background: linear-gradient(180deg, #0ea5e9, #0284c7); }
+.seg-two { background: linear-gradient(180deg, #14b8a6, #0f766e); }
+.seg-three { background: linear-gradient(180deg, #8b5cf6, #6d28d9); }
+.seg-four { background: linear-gradient(180deg, #f59e0b, #d97706); }
+.seg-six { background: linear-gradient(180deg, #f43f5e, #db2777); }
+
+.slider-track {
+  position: relative;
+  height: 28px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.slider-marker {
+  position: absolute;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f8fafc;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25), 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.probability-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.prob-chip {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.prob-chip strong,
+.prob-chip span {
+  display: block;
+}
+
+.prob-chip strong {
+  margin-bottom: 6px;
+}
+
+.prob-chip span {
+  color: #b2c8d7;
+}
+
+.overlay-card {
+  text-align: center;
+}
+
+.overlay-card p {
+  color: #d4e2ec;
+}
+
+@media (max-width: 1040px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .left-column,
+  .right-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 14px;
+  }
+
+  .hero-panel {
+    padding: 18px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .style-buttons,
+  .score-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .field {
+    min-height: 360px;
+  }
+
+  .segment {
+    font-size: 0.8rem;
+  }
+}
