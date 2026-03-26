@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import bat from './assets/bat.svg';
+import stumps from './assets/stumps.png';
 
 const MAX_BALLS = 12;
 const MAX_WICKETS = 2;
@@ -290,11 +291,15 @@ export default function App() {
             <div className="crowd-strip" />
             <div className="field-oval">
               <div className="pitch" />
+              <img src={stumps} className="stumps left" alt="stumps" />
+
               <div key={swingKey} className={phase === 'shot' ? 'batsman swing' : 'batsman'}>
                 <img src={bat} className="bat" alt="bat" />
                 <div className="player-head" />
                 <div className="player-body" />
               </div>
+              <img src={stumps} className="stumps right" alt="stumps" />
+
               <div key={ballKey} className={phase === 'bowling' ? 'ball bowling' : 'ball'} />
             </div>
           </div>

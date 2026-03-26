@@ -284,6 +284,24 @@ button {
   100% { transform: rotate(-12deg); }
 }
 
+.stumps {
+  position: absolute;
+  width: 100px; 
+  height: auto;
+}
+
+.stumps.left {
+  left: 25%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.stumps.right {
+  right: 25%;
+  top: 60%;
+  transform: translate(50%, -50%);
+}
+
 .ball {
   position: absolute;
   right: 22%;
