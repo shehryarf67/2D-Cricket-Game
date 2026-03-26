@@ -31,17 +31,20 @@ const COMMENTARY = {
   3: [
     'Excellent placement. They sprint back for three.',
     'That rolls into the deep and they collect three.',
-    'Terrific running between the wickets.'
+    'Terrific running between the wickets.',
+    'The fielding is slow and they take three runs.'
   ],
   4: [
     'Cracked away for four. Beautiful timing.',
     'That races to the fence. Four runs.',
-    'A boundary with real authority.'
+    'A boundary with real authority.',
+    'The crowd cheers as the ball hits the rope.'
   ],
   6: [
     'That is huge. Six into the crowd.',
     'Launched over the rope for a maximum.',
-    'What a strike. That is a clean six.'
+    'What a strike. That is a clean six.',
+    'The crowd goes wild for that one.'
   ]
 };
 
