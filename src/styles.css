@@ -266,14 +266,12 @@ button {
 
 .bat {
   position: absolute;
-  left: 44px;
-  top: 30px;
-  width: 12px;
-  height: 82px;
-  border-radius: 10px;
-  background: linear-gradient(180deg, #f5deb3, #d2a679);
-  transform-origin: bottom center;
-  box-shadow: 0 0 0 2px rgba(113, 76, 38, 0.22);
+  width: 70px;
+  height: auto;
+  left: 40px;
+  top: 70px;
+  transform: rotate(-30deg);
+  size: 40px 100px;
 }
 
 .swing .bat {

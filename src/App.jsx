@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import bat from './assets/bat.svg';
 
 const MAX_BALLS = 12;
 const MAX_WICKETS = 2;
@@ -290,7 +291,7 @@ export default function App() {
             <div className="field-oval">
               <div className="pitch" />
               <div key={swingKey} className={phase === 'shot' ? 'batsman swing' : 'batsman'}>
-                <div className="bat" />
+                <img src={bat} className="bat" alt="bat" />
                 <div className="player-head" />
                 <div className="player-body" />
               </div>
