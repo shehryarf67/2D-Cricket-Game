@@ -128,7 +128,7 @@ export default function App() {
 
   useEffect(() => {
     if (isGameOver) {
-      const endReason = wickets >= MAX_WICKETS ? 'All wickets are down.' : 'Innings .';
+      const endReason = wickets >= MAX_WICKETS ? 'All wickets are down.' : 'Innings complete.';
       setMatchStatus(`Game Over. ${endReason}`);
     }
   }, [isGameOver, wickets]);
